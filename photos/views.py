@@ -37,21 +37,21 @@ def search_category(request):
 def urban(request):
     urban_category = Category.objects.get(pk=1)
     urban = Image.objects.all().filter(category=urban_category)
-    return render(request,'category/urban/urban.html', {'urban':urban})
+    return render(request,'category/urban/urban.html', {"urban":urban})
 
 
 def wild(request):
-    wild_category = Category.objects.get(pk=2)
+    wild_category = Category.objects.get(pk=1)
     wild = Image.objects.filter(category=wild_category)
     return render(request,'category/wild/wild.html', {'wild':wild})
 
 
 def traditional(request):
-    traditional_category = Category.objects.get(pk=5)
+    traditional_category = Category.objects.get(pk=1)
     traditional = Image.objects.filter(category=traditional_category)
     return render(request,'category/traditional/traditional.html', {'traditional':traditional})
 
 def scenic(request):
-    scenic_category = Category.objects.get(pk=3)
+    scenic_category = Category.objects.get(pk=1)
     scenic = Image.objects.filter(category=scenic_category)
     return render(request,'category/scenic/scenic.html', {'scenic':scenic})
