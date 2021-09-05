@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+</head>
+
+<nav class="navbar navbar-inverse bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    <a class="navbar-brand" href="{% url 'gallery' %}">Gallery</a>
+
+    <div class="navbar-collapse navbar-right">
+        <form class="form-inline" role="search" action="{% url 'search_category' %}">
+            <input class="form-control" type="text" placeholder="Search by Category" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+</html>

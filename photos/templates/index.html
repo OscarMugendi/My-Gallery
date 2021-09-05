@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main">
+    <div>
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading" style="font-size:72px;" >My Gallery</h1>
+                <br>
+                <p class="lead text-muted">Welcome to My Gallery. An archive of East Africa's beauty.</p>
+                <br>
+                <p>
+                    <a href="{% url 'kenya'%}" class="btn btn-success">Kenya</a>
+                    <a href="{% url 'uganda'%}" class="btn btn-primary">Uganda</a>
+                    <a href="{% url 'tanzania'%}" class="btn btn-success">Tanzania</a>
+                    <a href="{% url 'rwanda'%}" class="btn btn-primary">Rwanda</a>
+                    <a href="{% url 'burundi'%}" class="btn btn-success">Burundi</a>
+                    <a href="{% url 'somalia'%}" class="btn btn-primary">Somalia</a>
+                    <a href="{% url 'ethiopia'%}" class="btn btn-success">Ethiopia</a>
+                    <a href="{% url 'sudan'%}" class="btn btn-primary">Sudan</a>
+                </p>
+                <br>
+                <p><a href="{% url 'gallery' %}" class="btn btn-info">All Photos</a></p>
+            </div>
+        </section>
+    </div>
+  
+    {% include 'gallery/show_album.html' %}
+</main>
+{% endblock %}

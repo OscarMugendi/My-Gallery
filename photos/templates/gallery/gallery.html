@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+<div id="colorlib-main">
+    <section class="ftco-section bg-light ftco-bread">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center">
+                <div class="col-md-9 ftco-animate">
+                    <p class="breadcrumbs"><span class="mr-2">
+                    <a href="index.html">Home</a></span> <span>Gallery</span></p>
+                    <br>
+                    <br>
+                    <h1>Gallery</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'gallery/show_album.html' %}
+</div>
+
+</body>
+</html>
+{% endblock %}
