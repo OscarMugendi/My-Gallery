@@ -34,44 +34,24 @@ def search_category(request):
         return render(request, 'search.html', {"message":message})
 
 
-def kenya(request):
-    kenya_category = Category.objects.get(pk=1)
-    kenya = Image.objects.all().filter(category=kenya_category)
-    return render(request,'category/kenya/kenya.html', {'kenya':kenya})
+def urban(request):
+    urban_category = Category.objects.get(pk=1)
+    urban = Image.objects.all().filter(category=urban_category)
+    return render(request,'category/urban/urban.html', {'urban':urban})
 
 
-def uganda(request):
-    uganda_category = Category.objects.get(pk=2)
-    uganda = Image.objects.filter(category=uganda_category)
-    return render(request,'category/uganda/uganda.html', {'uganda':uganda})
+def wild(request):
+    wild_category = Category.objects.get(pk=2)
+    wild = Image.objects.filter(category=wild_category)
+    return render(request,'category/wild/wild.html', {'wild':wild})
 
 
-def tanzania(request):
-    tanzania_category = Category.objects.get(pk=5)
-    tanzania = Image.objects.filter(category=tanzania_category)
-    return render(request,'category/tanzania/tanzania.html', {'tanzania':tanzania})
+def traditional(request):
+    traditional_category = Category.objects.get(pk=5)
+    traditional = Image.objects.filter(category=traditional_category)
+    return render(request,'category/traditional/traditional.html', {'traditional':traditional})
 
-def rwanda(request):
-    rwanda_category = Category.objects.get(pk=3)
-    rwanda = Image.objects.filter(category=rwanda_category)
-    return render(request,'category/rwanda/rwanda.html', {'rwanda':rwanda})
-
-def burundi(request):
-    burundi_category = Category.objects.get(pk=3)
-    burundi = Image.objects.filter(category=burundi_category)
-    return render(request,'category/burundi/burundi.html', {'burundi':burundi})
-
-def somalia(request):
-    somalia_category = Category.objects.get(pk=3)
-    somalia = Image.objects.filter(category=somalia_category)
-    return render(request,'category/somalia/somalia.html', {'somalia':somalia})
-
-def ethiopia(request):
-    ethiopia_category = Category.objects.get(pk=3)
-    ethiopia = Image.objects.filter(category=ethiopia_category)
-    return render(request,'category/ethiopia/ethiopia.html', {'ethiopia':ethiopia})
-
-def sudan(request):
-    sudan_category = Category.objects.get(pk=3)
-    sudan = Image.objects.filter(category=sudan_category)
-    return render(request,'category/sudan/sudan.html', {'sudan':sudan})
+def scenic(request):
+    scenic_category = Category.objects.get(pk=3)
+    scenic = Image.objects.filter(category=scenic_category)
+    return render(request,'category/scenic/scenic.html', {'scenic':scenic})
