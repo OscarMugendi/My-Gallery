@@ -19,6 +19,11 @@ class Location(models.Model):
     
     def delete_location(self):
         self.delete()
+
+    @classmethod
+    def get_location(cls):
+        locations = cls.objects.all()
+        return locations
     
 
 class Category(models.Model):
@@ -37,6 +42,16 @@ class Category(models.Model):
     
     def delete_category(self):
         self.delete()
+
+    @classmethod
+    def get_category(cls):
+        categories = cls.objects.all()
+        return categories
+
+    @classmethod
+    def search_by_category(cls, search_term):
+        images = cls.objects.filter(category__category__icontains=search_term)
+        return images
         
 
 class Image(models.Model):
@@ -70,6 +85,11 @@ class Image(models.Model):
     def get_image_by_id(cls):
         images = cls.objects.get(pk=id)
         return images
+
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.all()
+        return images
     
     def search_image(category):
         pass
@@ -79,5 +99,30 @@ class Image(models.Model):
     
     @classmethod
     def search_by_category(cls,search_term):
-        searched_images = cls.objects.filter(category__icontains=search_term)
+        searched_images = cls.objects.filter(category__category__icontains=search_term)
         return searched_images
+
+    @classmethod
+    def search_by_location(cls, location):
+        images = cls.objects.filter(location__location=location)
+        return images
+
+    @classmethod
+    def get_by_category(cls, category):
+        images = cls.objects.filter(category__category=category)
+        return images
+
+    @classmethod
+    def get_image(request, id):
+        locations = Location.get_location()
+        try:
+            image = Image.objects.get(pk = id)
+            print(image)
+            
+        except ObjectDoesNotExist:
+            raise Http404()
+        
+        return image
+    
+    def __str__(self):
+        return self.image_name
