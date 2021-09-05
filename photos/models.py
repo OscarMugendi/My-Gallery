@@ -57,6 +57,9 @@ class Image(models.Model):
     
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')
+
+    def summary(self):
+        return self.description[:100]+" ......"
     
     def save_image(self):
         self.save()

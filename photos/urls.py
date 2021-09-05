@@ -8,10 +8,10 @@ urlpatterns=[
     url(r'^gallery/$', views.gallery, name = 'gallery'),
     url(r'^gallery/<int:image_id>/$', views.single_image_details, name='details'),
     url(r'^search/', views.search_category, name = 'search_category'),
-    url(r'^category/urban/$', views.kenya, name = 'kenya'),
-    url(r'^category/wild/$', views.tanzania, name = 'tanzania'),
-    url(r'^category/traditional/$', views.uganda, name = 'uganda'),
-    url(r'^category/scenic/$', views.rwanda, name = 'rwanda'),
+    url(r'^category/urban/$', views.urban, name = 'urban'),
+    url(r'^category/wild/$', views.wild, name = 'wild'),
+    url(r'^category/traditional/$', views.traditional, name = 'traditional'),
+    url(r'^category/scenic/$', views.scenic, name = 'scenic'),
 ]
 
 if settings.DEBUG:

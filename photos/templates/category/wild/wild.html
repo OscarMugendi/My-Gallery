@@ -5,16 +5,12 @@
     <br>
     <br>
     <div class="container">
-        <h2 style="text-align:center"><b> Kenya </b></h2>  
-        <br> 
-        <hr>
-        <br>   
+        <h2>Wild</h2>      
         <div class="row">
-            {% for image in kenya %}
+            {% for image in wild %}
             {% include 'category_detail.html'%}
             {% include 'modal.html' %}
-            <br>
-            <hr>
+
             {% empty %}
             <h3>No Images to display.</h3>
             {% endfor %}

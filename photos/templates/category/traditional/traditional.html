@@ -5,12 +5,16 @@
     <br>
     <br>
     <div class="container">
-        <h2>Tanzania </h2>      
+        <h2 style="text-align:center"><b> Traditional </b></h2>  
+        <br> 
+        <hr>
+        <br>   
         <div class="row">
-            {% for image in tanzania %}
+            {% for image in traditional %}
             {% include 'category_detail.html'%}
             {% include 'modal.html' %}
-
+            <br>
+            <hr>
             {% empty %}
             <h3>No Images to display.</h3>
             {% endfor %}
