@@ -6,15 +6,26 @@
   <title>Home</title>
 </head>
 
+<body>
 <nav class="navbar navbar-inverse bg-dark">
-    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-    <a class="navbar-brand" href="{% url 'gallery' %}">Gallery</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'home' %}">My Gallery</a>
+        </div>
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+        <a class="navbar-brand" href="{% url 'gallery' %}">Gallery</a>
 
-    <div class="navbar-collapse navbar-right">
-        <form class="form-inline" role="search" action="{% url 'search_category' %}">
-            <input class="form-control" type="text" placeholder="Search by Category" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="col-sm-4 col-md-4 navbar-right">
+            <form class="navbar-form" role="search" action="{% url 'search_category' %}">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" name="category" aria-label="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </nav>
+</body>
 </html>

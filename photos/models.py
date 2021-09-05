@@ -46,6 +46,9 @@ class Image(models.Model):
     category = models.ForeignKey(Category, related_name='category', on_delete=models.DO_NOTHING)
     pub_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.name
     
     class Meta:
         ordering = ["pub_date"]
@@ -73,5 +76,5 @@ class Image(models.Model):
     
     @classmethod
     def search_by_category(cls,search_term):
-        searched_images = cls.objects.filter(category__icontains = search_term)
+        searched_images = cls.objects.filter(category__icontains=search_term)
         return searched_images

@@ -6,9 +6,12 @@
     <div>
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading" style="font-size:72px;" >My Gallery</h1>
+                <h1 class="jumbotron-heading" style="font-size:72px;" ><b>My Gallery</b></h1>
+                <p class="lead text-muted"><i>An archive of East Africa's beauty.</i></p>
                 <br>
-                <p class="lead text-muted">Welcome to My Gallery. An archive of East Africa's beauty.</p>
+                <hr>
+                <br>
+                <p><a href="{% url 'gallery' %}" class="btn btn-info btn-lg">View all Photos</a></p>
                 <br>
                 <p>
                     <a href="{% url 'kenya'%}" class="btn btn-success">Kenya</a>
@@ -20,8 +23,6 @@
                     <a href="{% url 'ethiopia'%}" class="btn btn-success">Ethiopia</a>
                     <a href="{% url 'sudan'%}" class="btn btn-primary">Sudan</a>
                 </p>
-                <br>
-                <p><a href="{% url 'gallery' %}" class="btn btn-info">All Photos</a></p>
             </div>
         </section>
     </div>
