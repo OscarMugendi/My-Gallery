@@ -18,13 +18,15 @@
 
         <div class="row">
             <div class="col-md-9 container">
-                <span id="locations">
-                    {% for location in locations %}
-                        <a class="btn btn-outline-info btn-sm" id="btn"
-                            href="/location/{{location.name}}"><b></b>{{location.name}}
-                        </a>
-                    {%endfor%}
-                </span>
+                <div class="container" style="text-align: center">
+                    <span id="locations" style="vertical-align: middle" class="inline-block">
+                        {% for location in locations %}
+                            <a class="btn btn-outline-info btn-sm" id="btn"
+                                href="/location/{{location.name}}"><b></b>{{location.name}}
+                            </a>
+                        {%endfor%}
+                    </span>
+                </div>
             </div>
         </div>
     </div>
