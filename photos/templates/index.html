@@ -11,17 +11,26 @@
                 <br>
                 <hr>
                 <br>
-                <p><a href="{% url 'gallery' %}" class="btn btn-info btn-lg">View all Photos</a></p>
+                <p><a href="{% url 'gallery' %}" class="btn btn-info btn-lg">View our Collection</a></p>
                 <br>
-                <p>
-                    <a href="{% url 'urban'%}" class="btn btn-success">Urban</a>
-                    <a href="{% url 'wild'%}" class="btn btn-primary">Wild</a>
-                    <a href="{% url 'traditional'%}" class="btn btn-success">Traditional</a>
-                    <a href="{% url 'scenic'%}" class="btn btn-primary">Scenic</a>
-                </p>
             </div>
         </section>
+
+        <div class="row">
+            <div class="col-md-5">
+                <span id="locations">
+                    {% for location in locations %}
+                        <a class="btn btn-outline-info btn-sm" id="btn"
+                            href="/location/{{location.name}}">{{location.name}}
+                        </a>
+                    {%endfor%}
+                </span>
+            </div>
+        </div>
     </div>
+    <br>
+    <hr>
+    <br>
   
     {% include 'gallery/show_album.html' %}
 </main>
