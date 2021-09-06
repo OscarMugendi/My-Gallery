@@ -10,9 +10,6 @@ class Location(models.Model):
         ordering = ["name"]
         verbose_name = "Location"
         verbose_name_plural = "Locations"        
-        
-    def __str__(self):
-        return self.name
     
     def save_location(self):
         self.save()    
@@ -24,6 +21,9 @@ class Location(models.Model):
     def get_location(cls):
         locations = cls.objects.all()
         return locations
+
+    def __str__(self):
+        return self.name
     
 
 class Category(models.Model):
@@ -33,9 +33,6 @@ class Category(models.Model):
         ordering = ["name"]
         verbose_name = "Category"
         verbose_name_plural = "Categories"
-    
-    def __str__(self):
-        return self.name  
     
     def save_category(self):
             self.save()
@@ -52,6 +49,9 @@ class Category(models.Model):
     def search_by_category(cls, search_term):
         images = cls.objects.filter(category__category__icontains=search_term)
         return images
+
+    def __str__(self):
+        return self.name  
         
 
 class Image(models.Model):
@@ -61,9 +61,6 @@ class Image(models.Model):
     category = models.ForeignKey(Category, related_name='category', on_delete=models.DO_NOTHING)
     pub_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to = 'images/')
-
-    def __str__(self):
-        return self.name
     
     class Meta:
         ordering = ["pub_date"]
@@ -95,8 +92,13 @@ class Image(models.Model):
         pass
     
     def filter_by_location(location):
-        pass
+        image_location = Image.objects.filter(location__name=location).all()
+        return image_location
     
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
     @classmethod
     def search_by_category(cls,search_term):
         searched_images = cls.objects.filter(category__category__icontains=search_term)
@@ -125,4 +127,4 @@ class Image(models.Model):
         return image
     
     def __str__(self):
-        return self.image_name
+        return self.name
