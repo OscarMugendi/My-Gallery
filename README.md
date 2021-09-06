@@ -22,7 +22,7 @@ A django application showcasing East Africa's beauty.
 - Run the application.
 
 # Live Page
-A live version of this application is available at 
+A live version of this application is available at:- https://my-gallery-moringa.herokuapp.com/
 
 # Author
 - Oscar Mugendi
