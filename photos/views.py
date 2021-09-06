@@ -59,21 +59,6 @@ def urban(request):
     return render(request,'category/urban/urban.html', {"urban":urban})
 
 
-def location(request, location):
-    images = Image.search_by_location(location)
-    locations = Location.get_location()
-    message = f"{location}"
-    return render(request, 'locations.html', {"message":message, "images":images, "locations":locations})
-
-
-def category(request, category):
-    images = Image.get_by_category(category)
-    locations = Location.get_location()
-    message = f"{category}"
-    return render(request, 'category.html', {"message":message, "images":images, "locations":locations})
-
-
-
 def wild(request):
     wild_category = Category.objects.get(pk=1)
     wild = Image.objects.filter(category=wild_category)
