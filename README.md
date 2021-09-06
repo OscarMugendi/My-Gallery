@@ -2,7 +2,7 @@
 A django application showcasing East Africa's beauty.
 
 # Requirements
-- python3
+- Python3
 - Django
 - Pip
 
@@ -14,6 +14,7 @@ A django application showcasing East Africa's beauty.
 - Pillow 8.3.2
 - psycopg2-binary 2.9.1
 - Postgresql
+- Heroku
 
 # Installation
 - Clone the repository.
