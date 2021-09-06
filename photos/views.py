@@ -12,8 +12,14 @@ def index(request):
     date = dt.date.today()
     images = Image.objects.all()
     locations = Location.get_locations()
+    gallery = Image.objects.all()[:6]
     print(locations)
-    return render(request,'index.html', {'images': images[::-1], 'locations': locations, 'date': date})
+    return render(request,'index.html', {'images': images[::-1], 'locations': locations, 'date': date, 'gallery': gallery})
+
+
+def gallery(request):
+    gallery = Image.objects.all()
+    return render(request, 'gallery/gallery.html', {'gallery':gallery})
 
 
 def image_location(request, location):
