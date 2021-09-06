@@ -16,7 +16,7 @@ class LocationTestClass(TestCase):
 
 class CategoryTestClass(TestCase):
     def setUp(self):
-        self.cat1 = Category(name = 'Sport')
+        self.cat1 = Category(name = 'Wild')
 
 
 class ImageTestClass(TestCase):
