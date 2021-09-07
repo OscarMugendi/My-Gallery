@@ -25,7 +25,14 @@ A django application showcasing East Africa's beauty.
 - Run the application.
 
 # Live Page
-A live version of this application is available at https://my-gallery-moringa.herokuapp.com/
+- A live version of this application is available at https://my-gallery-moringa.herokuapp.com/
+
+- The live page is currently not working.
+
+# Known Bugs
+- The modal for viewing individual images is not working.
+- Consequently, users cannot view details nor copy the url.
+- Heroku deployment has failed despite repeated attempts.
 
 # Author
 - Oscar Mugendi
