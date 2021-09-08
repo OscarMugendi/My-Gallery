@@ -30,7 +30,7 @@ A live version of this application is available at:- https://my-gallery-moringa.
 # Known Bugs
 - The modals for viewing individual images are not working and have been removed.
 
-- Consequently, users cannot view details nor copy the url on an individual image.
+- As a result, users cannot view details nor copy an image url.
 
 # Authors
 - Oscar Mugendi
