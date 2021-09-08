@@ -21,5 +21,7 @@ summary {
 }
 
 body {
-    background-color:darkgrey;
+  background-image: url("bg-gallery.jpeg");
+  background-size: contain;
+  background-color: #cccccc;
 }
