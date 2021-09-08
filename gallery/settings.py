@@ -10,10 +10,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n-o)3bu!crsjawl$038-s)q5p%-wcwj!)5h#!==vkh$*23oxaj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+MODE=config("MODE", default="dev")
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -121,21 +122,25 @@ django_on_heroku.settings(locals())
     #}
 #}
 
-if DEBUG==True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'gallery',
-            'USER':'oscar',
-            'PASSWORD':'123456789',
-        }
-    }
+if config('MODE')=="dev":
+       DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
+           'HOST': config('DB_HOST'),
+           'PORT': '',
+       }
+       
+   }
+
 else:
-    DATABASES={
-        'default':dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
 
 db_from_env=dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
