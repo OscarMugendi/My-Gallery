@@ -1,5 +1,5 @@
 # My-Gallery
-A django application showcasing East Africa's beauty.
+A photo gallery showcasing East Africa's beauty. This application was developed as a 
 
 # Requirements
 - Python3
@@ -22,6 +22,7 @@ A django application showcasing East Africa's beauty.
 - Clone the repository.
 - cd to app folder.
 - Create a virtual environment.
+- Install Django extensions and app dependencies.
 - Run the application.
 
 # Live Page
