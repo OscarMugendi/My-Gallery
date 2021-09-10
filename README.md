@@ -1,5 +1,5 @@
 # My-Gallery
-A photo gallery showcasing East Africa's beauty. This application was developed as a 
+A photo gallery showcasing East Africa's beauty.
 
 # Requirements
 - Python3
